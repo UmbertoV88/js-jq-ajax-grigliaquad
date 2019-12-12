@@ -9,13 +9,18 @@ $(document).ready(function() {
             url : "https://flynn.boolean.careers/exercises/api/random/int",
             method : "GET",
             success : function (data){
-                if (data.response <= 5) {
-                    // quadCorrente.removeClass("green");
-                    quadCorrente.addClass("yellow");
-                    console.log(data.response);
+                if (quadCorrente.hasClass("yellow") || quadCorrente.hasClass("green")) {
                 }else{
-                    quadCorrente.addClass("green");
+                    if (data.response <= 5) {
+                        quadCorrente.addClass("yellow");
+                        console.log(data.response);
+                    }else{
+                        quadCorrente.addClass("green");
+                        console.log(data.response);
+                    }
                 }
+
+
             },
             error : function(){
 
