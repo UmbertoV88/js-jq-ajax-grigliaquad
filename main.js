@@ -9,8 +9,7 @@ $(document).ready(function() {
             url : "https://flynn.boolean.careers/exercises/api/random/int",
             method : "GET",
             success : function (data){
-                if (quadCorrente.hasClass("yellow") || quadCorrente.hasClass("green")) {
-                }else{
+                if (!quadCorrente.hasClass("yellow") || !quadCorrente.hasClass("green")) {
                     if (data.response <= 5) {
                         quadCorrente.addClass("yellow");
                         console.log(data.response);
@@ -19,8 +18,6 @@ $(document).ready(function() {
                         console.log(data.response);
                     }
                 }
-
-
             },
             error : function(){
 
